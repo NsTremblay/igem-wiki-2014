@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uOttawa iGEM</title>
+
+    <link rel="stylesheet" href="css/uo2014.css" />
+    <script src="./uo2014-jquery.js"></script>
+
+    <script>
+    $(function() {
+        $(".hover").parents(".ig-tile").hover(function() {
+            $(this).find(".hover").slideDown(300);
+        }, function() {
+            $(this).find(".hover").slideUp(300);
+        });
+    });
+    </script>
+</head>
+<body>
+    <header class="ig-main-header">
+        <div class="row">
+            <span class="title igem">iGEM</span><span class="title">uOttawa</span>
+            <img src="r/uo2014-igemlogo.png" alt="" class="igem-logo">
+        </div>
+    </header>
+</body>
+</html>
