@@ -1,0 +1,47 @@
+h3 {
+	font-family: Arial;
+}
+
+.headerBar{
+	float:left;
+	list-style-type: none;
+	width:100pt;
+	text-align: center;
+}
+
+.contentDiv{
+	position:relative;
+	margin-left: auto;
+	margin-right: auto;
+	width:90%;
+	
+	background-color: white;
+	box-shadow: 0 0 20px #888888;
+
+}
+
+.HPcontentSelectorClass{
+	position:relative;
+	width:90%;
+	height: 40pt;
+	border-bottom: 2px solid #4d9a06;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.subHPSpan{
+	font-family: Arial;
+	cursor: pointer;
+	width: 12%;
+	float:left;
+
+}
+.hpIndividualElement{
+	position:relative;
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	display: none;
+	overflow: hidden;
+}

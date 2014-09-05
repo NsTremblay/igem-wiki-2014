@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>uOttawa iGEM</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/uo2014.css" />
+    <script src="./uo2014-jquery.js"></script>
+    <script src="js/script.js"></script>
+
+    <script>
+    $(function() {
+        $(".hover").parents(".ig-tile").hover(function() {
+            $(this).find(".hover").slideDown(300);
+        }, function() {
+            $(this).find(".hover").slideUp(300);
+        });
+    });
+
+    $('#graphs').scroll(function() {
+    var pos = $('#graphs').scrollTop();
+    if (pos == 0) {
+        alert('top of the div');
+    }else{
+    	alert("Working");
+    }
+	});
+    </script>
+
+    <!-- amCharts javascript sources -->
+		<script type="text/javascript" src="http://cdn.amcharts.com/lib/3/amcharts.js"></script>
+		<script type="text/javascript" src="http://cdn.amcharts.com/lib/3/pie.js"></script>
+		<script type="text/javascript" src="http://cdn.amcharts.com/lib/3/themes/light.js"></script>
+
+		<!-- amCharts javascript code -->
+		<script type="text/javascript">
+		function getPieGraph(){
+			AmCharts.makeChart("chartPie",
+				{
+					"type": "pie",
+					"pathToImages": "http://cdn.amcharts.com/lib/3/images/",
+					"angle": 16.2,
+					"balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+					"depth3D": 6,
+					"innerRadius": "48%",
+					"labelRadius": 24,
+					"alpha": 0.56,
+					"brightnessStep": 137.7,
+					"pullOutEffect": "elastic",
+					"titleField": "category",
+					"valueField": "column-1",
+					"theme": "light",
+					"allLabels": [],
+					"balloon": {},
+					"titles": [],
+					"dataProvider": [
+						{
+							"category": "Biological Sciences",
+							"column-1": "49.68"
+						},
+						{
+							"category": "Health Sciences",
+							"column-1": "8.11"
+						},
+						{
+							"category": "Engineering",
+							"column-1": "6.8"
+						},
+						{
+							"category": "Other Sciences",
+							"column-1": "6.8"
+						},
+						{
+							"category": "Business",
+							"column-1": "2.3"
+						},
+						{
+							"category": "Politics",
+							"column-1": "1.2"
+						}
+					]
+				}
+			);
+		}
+function getBarGraph(){
+AmCharts.makeChart("chartdiv",
+				{
+					"type": "serial",
+					"pathToImages": "http://cdn.amcharts.com/lib/3/images/",
+					"categoryField": "category",
+					"plotAreaBorderColor": "#FFFFFF",
+					"startDuration": 1,
+					"borderColor": "#FFFFFF",
+					"theme": "light",
+					"categoryAxis": {
+						"gridPosition": "start",
+						"title": "Would you be interested in taking a synthetic biology course?",
+						"titleBold": false
+					},
+					"trendLines": [],
+					"graphs": [
+						{
+							"balloonText": "[[title]] of [[category]]:[[value]]",
+							"fillAlphas": 1,
+							"id": "AmGraph-1",
+							"title": "graph 1",
+							"type": "column",
+							"valueField": "column-1"
+						}
+					],
+					"guides": [],
+					"valueAxes": [
+						{
+							"id": "ValueAxis-3",
+							"title": "Percentage of student votes"
+						}
+					],
+					"allLabels": [],
+					"balloon": {
+						"borderAlpha": 0.44
+					},
+					"titles": [
+						{
+							"id": "Title-1",
+							"size": 15,
+							"text": ""
+						}
+					],
+					"dataProvider": [
+						{
+							"category": "Yes",
+							"column-1": "83.78"
+						},
+						{
+							"category": "No",
+							"column-1": "2.70"
+						},
+						{
+							"category": "Maybe",
+							"column-1": "13.51"
+						}
+					]
+				}
+			);
+}
+		</script>
+
+		 <!-- amCharts javascript sources -->
+        <script type="text/javascript" src="http://cdn.amcharts.com/lib/3/amcharts.js"></script>
+        <script type="text/javascript" src="http://cdn.amcharts.com/lib/3/serial.js"></script>
+        <script type="text/javascript" src="http://cdn.amcharts.com/lib/3/themes/light.js"></script>
+
+        <!-- amCharts javascript code -->
+        <script type="text/javascript">
+            AmCharts.makeChart("chartdiv",
+                {
+                    "type": "serial",
+                    "pathToImages": "http://cdn.amcharts.com/lib/3/images/",
+                    "categoryField": "category",
+                    "plotAreaBorderColor": "#FFFFFF",
+                    "startDuration": 1,
+                    "borderColor": "#FFFFFF",
+                    "theme": "light",
+                    "categoryAxis": {
+                        "gridPosition": "start",
+                        "title": "Would you be interested in taking a synthetic biology course?",
+                        "titleBold": false
+                    },
+                    "trendLines": [],
+                    "graphs": [
+                        {
+                            "balloonText": "[[title]] of [[category]]:[[value]]",
+                            "fillAlphas": 1,
+                            "id": "AmGraph-1",
+                            "title": "graph 1",
+                            "type": "column",
+                            "valueField": "column-1"
+                        }
+                    ],
+                    "guides": [],
+                    "valueAxes": [
+                        {
+                            "id": "ValueAxis-3",
+                            "title": "Percentage of student votes"
+                        }
+                    ],
+                    "allLabels": [],
+                    "balloon": {
+                        "borderAlpha": 0.44
+                    },
+                    "titles": [
+                        {
+                            "id": "Title-1",
+                            "size": 15,
+                            "text": ""
+                        }
+                    ],
+                    "dataProvider": [
+                        {
+                            "category": "Yes",
+                            "column-1": "83.78"
+                        },
+                        {
+                            "category": "No",
+                            "column-1": "2.70"
+                        },
+                        {
+                            "category": "Maybe",
+                            "column-1": "13.51"
+                        }
+                    ]
+                }
+            );
+        </script>
+
+</head>
+<body onload="changeHP('lts')">
+    <header class="ig-main-header" >
+        <div class="row">
+            <span class="title igem">iGEM</span><span class="title">uOttawa</span>
+            <a  onclick="showSub('Modeling');">Model</a>
+            <img src="r/uo2014-igemlogo.png" alt="" class="igem-logo">
+        </div>
+        <div id="modeling" style="height:100pt; width:100%; overflow:hidden; display:none; background-color:red;position:relative;"></div>
+        <!--Temparary divs for the menues are stored here-->
+    </header>
+
+    <br>
+    <div id="graphs" height="500" width="500">
+    	
+    </div>
+
+
+    <div style="height:78px; width:100%;"></div>
+
+    <div id="content" class="contentDiv">
+    <br>
+    <h1 style="font-family:Arial; margin-left:20px;">Human Practices</h1>
+
+    <div id="HPcontentSelector" class="HPcontentSelectorClass">
+    	<div onclick="changeHP('lts')" class="subHPSpan">Let's Talk Science </div>
+    	<div onclick="changeHP('class')" class="subHPSpan">Classroom</div>
+    	<div onclick="changeHP('festival')" class="subHPSpan">Festivals and Fairs</div>
+    	<div onclick="changeHP('uni')" class="subHPSpan">University Course</div>
+    	<div onclick="changeHP('mini')" class="subHPSpan">Mini course</div>
+    	<div onclick="changeHP('ogem')" class="subHPSpan">OGEM</div>
+    	<div onclick="changeHP('youtube')" class="subHPSpan">YouTube</div>
+    	<div onclick="changeHP('book')" class="subHPSpan">Childrens Book</div>
+    </div>
+    
+    <div id="lts" class="hpIndividualElement">
+		<h3 style="font-family:Arial">Collaboration with Let’s Talk Science </h3>
+		<p>In an effort to extend our reach into our university and city communities, the 
+		University of Ottawa iGEM Human Practices Team partnered up with Let’s 
+		Talk Science for the 2014 season. Let’s Talk Science is an award-winning, 
+		national organization that creates and delivers programs to engage youth 
+		and educators in science, technology, engineering and math (STEM). As a 
+		team, we recognized that our interests as Human Practices overlapped with 
+		the interests of Let’s Talk Science in educating youth about the possibilities 
+		that science, including the field of synthetic biology, brings. We established 
+		communication with the Ottawa Chapter of Let’s Talk Science and a great 
+		partnership was established for the 2014 season. </p>
+		<p>
+		Through our collaboration with LTS, we were able to set up an iGEM station 
+		at the Let’s Talk Science Challenge, an annual event that brings together a 
+		large group of students from Grades 6, 7 and 8. These students participate in 
+		a science trivia competition for the first half of the day and face-off in a 
+		design challenge later in the day. By setting up a station at this event in 
+		Ottawa, we were able to reach tens of elementary-aged students and 
+		introduce them to the concepts of synthetic biology in a fun and engaging 
+		manner (see below). In return, our iGEM Team members volunteered their 
+		time to help score both the trivia competition and the design challenge. </p>
+		<p>
+		Furthermore, in the context of this partnership, a few members of our 
+		Human Practices Team were able to participate in a training workshop 
+		offered by Let’s Talk Science to improve their skills as youth science 
+		educators. This served to enhance our ability to communicate science 
+		concepts to the general public, specifically to a young audience. 
+		</p>
+		<p>
+		As an established organization in the Ottawa community, Let’s Talk Science 
+		had prior contact with elementary, middle and high schools across the city. 
+		They were able to advertise our offer of synthetic biology-oriented 
+		presentations to these schools and the response was huge and immediate. To 
+		learn more about these classroom presentations, click here. 
+		</p>
+		<br>
+		<br>
+    </div>
+
+	<div id="class" class="hpIndividualElement">
+		<h3 style="font-family:Arial">Classroom Presentations </h3>
+		<p>
+		In addition to participating in Let’s Talk Science and community events, our 
+		collaboration with Let’s Talk Science also allowed us to extend our outreach 
+		to students in public schools. This is profound because the classroom setting 
+		allows us to teach students in an environment of learning where 
+		distractions, such as those present at community events, are minimal. And 
+		the earlier students are exposed to synthetic biology and science in general, the less time they have had to have been influenced by the plethora of 
+		misconceptions about science that are circulating in the public sphere. Very 
+		often adults assume that young children are incapable of grasping or 
+		appreciating the beauty and elegance of scientific ideas but they could not 
+		be more wrong. In fact, children’s minds are far more open than those of 
+		adults allowing them to circumvent the problem altogether. 
+		</p>
+		<p>
+		We discovered that teachers whole-heartedly agree with our sentiments 
+		about presenting synthetic biology to students early on, after receiving 
+		dozens of requests to give in-class presentations within the first few days of 
+		having our presentations advertised by Let’s Talk Science. Despite the fact 
+		that we were not able to meet an overwhelming demand for presentations, 
+		we managed to reach several elementary and middle schools and the 
+		response from the teachers and students was resoundingly positive. 
+		Students’ questions were never-ending and the teachers’ feedback always 
+		included a request to return and do more activities.
+		</p>
+		<p> 
+		During the one-month period that we had to plan and carry out the 
+		activities, we managed to do three presentations at three different schools 
+		and received wonderful feedback from all three schools. Once schools open 
+		up again this September, we will resume our activities in the classrooms to 
+		allow us to reach an even greater number of students. 
+		</p>
+		<br>
+		<br>
+	</div>
+
+    <div id="festival" class="hpIndividualElement">
+    	<h3 style="font-family:Arial">Fairs and Festivals </h3>
+		<h4 style="font-family:Arial">Engineering Family Fair Day (University of Ottawa) <h4>
+		<p>
+		In March 2014, as part of National Engineering Month, the University 
+		of Ottawa organized the Engineering Family Fair Day. Multiple booths 
+		featured tools and activities to showcase engineering to the general 
+		public, including young kids. The uOttawa iGEM team was invited to 
+		participate and we set up a booth of our own where we displayed our 
+		children’s book (Human Practices Project 2013) and guided 
+		participants through multiple activities including DNA base pair 
+		matching exercises and “DNA bracelet” making. We even talked to 
+		some young students about possible careers in synthetic biology and 
+		related fields.
+		</p> 
+		<h4 style="font-family:Arial"> The Ottawa International Children’s Festival </h4>
+		<p>
+		In May 2014, the uOttawa iGEM Team ran educational science 
+		activities at the International Children’s Festival in Ottawa. Children of 
+		various ages visited our table to read Mr. Cool’s Microscopic 
+		Adventures and make bracelets spelling their names based on aDNA/amino acid code! Throughout the day, we were able to 
+		disseminate fundamental biological concepts such as mitosis, meiosis 
+		and amino acid code to the students. The students were extremely 
+		receptive to the novel ideas that the activities offered. Both parents 
+		and students found the activities to be unique and creative, which 
+		made the science not only detailed but fun as well. 
+		</p>
+		<h4 style="font-family:Arial">The Mayfair Community Carnival</h4> 
+		<p>
+		Every year, Farley Mowat Public School in Ottawa hosts the Mayfair 
+		carnival and invites families from across Ottawa to take part. Over the 
+		years, the Mayfair has grown from a small school fundraiser to a 
+		community-wide, must-attend event. This year, the uOttawa iGEM 
+		Team was there to run activities for kids and talk to the families about 
+		iGEM and synthetic biology. We prepared fact sheets about our iGEM 
+		Team and handed them out to attendees. We chatted with the parents 
+		as the kids enjoyed making DNA out of marshmallow and candy, 
+		among other activities. Our booth was a huge hit and it was so 
+		rewarding to see the looks of awe on the kids’ faces as they twisted 
+		the DNA double helix they had just constructed. 
+		</p>
+		<p>
+		We also had the pleasure of chatting with the Mayor of Ottawa, Mr. 
+		Jim Watson, who attended the carnival and visited our booth. 
+		</p>
+<br>
+		<br>
+    </div>
+
+    <div id="uni" class="hpIndividualElement">
+    	<h3 style="font-family:Arial">University Course Design </h3>
+		<p>
+		Inspired by universities around the world who have already integrated 
+		synthetic biology courses in their curricula and by our own belief in the 
+		importance of exposing undergraduate students to the emerging field of 
+		synthetic biology, our iGEM HP team has helped put a synthetic biology 
+		course in the works at the University of Ottawa. As a team, we researched 
+		various topics and put together a first draft of the course outline, after which 
+		we handed it over to our team instructor and faculty member Dr. Mads 
+		Kaern, who will be moving the idea forward. 
+		</p>
+		<p>
+		To gauge interest in a synthetic biology course, our team also designed and 
+		administered a survey to students at the University of Ottawa. The primary 
+		results were overwhelmingly positive.
+		</p>
+		<div id="chartPie" style="width: 500pt; height: 400px;  position:relative; margin-left:auto; margin-right:auto;" ></div>
+    		<div id="chartdiv" style="width: 500pt; height: 400px;  position:relative; margin-left:auto; margin-right:auto;" ></div>	
+
+		<p>Some student comments we received as part of the survey: </p>
+<p>“I think this course could be really practical!” </p>
+<p>“This sounds so cool. I wish I wasn’t graduating so I could stick around and 
+take this class.”</p>
+<p>“I think this is [a] fantastic idea for a course and I hope it generates enough 
+interest to become a reality!” </p>
+<p>“Great idea, hope this pans out.” </p>
+<br>
+		<br>
+    </div>
+
+    <div id="mini" class="hpIndividualElement">
+    	<h3 style="font-family:Arial">Enrichment Mini-Courses Program </h3>
+		<p>
+		The Enrichment Mini-Courses Program offers talented middle school and 
+		high school students from Eastern Ontario and Western Quebec the 
+		opportunity to explore a field of interest in a university setting. Each year, 
+		nearly 3000 students participate in this weeklong program and the 
+		University of Ottawa is a major participating post-secondary institution. This 
+		year, the uOttawa iGEM team did three presentations as part of EMCP 
+		courses. We did presentations in both English and French versions of the 
+		“Detectives in Genes/Jeans” course and a presentation in “The Wonderful 
+		World of Electronic Imaging.” Our presentations featured activities such as 
+		DNA extraction from strawberries, exploration of synthetic gene network 
+		design using Lego and building marshmallow animals to learn about meiosis. 
+		Throughout the course of these presentations, we reached around 100 
+		students and had a great time doing it. 
+		</p>
+		<p>
+		In fact, we enjoyed this experience so much that we are now in talks to 
+		design and run our own enrichment mini-course program. Preparation starts 
+		up again this fall and we are ready to get involved. 
+		</p>
+		<br>
+		<br>
+    </div>
+
+    <div id="ogem" class="hpIndividualElement">
+    	<h3 style="font-family:Arial">OGEM</h3>
+<p>
+The Ontario Genetically Engineered Machine (oGEM) conference was held in Toronto on Aug 9-10. The conference aimed to further develop the iGEM competition and involved the discussion of topics relevant to this purpose among the five Ontario iGEM teams.
+</p>
+<p>
+Based on the presentations given by each team, all Human Practices (HP) projects incorporated high school outreach in some way. Thus, in order to stand out from other teams, it was suggested that HP projects should be linked to the application of the wet lab project. This would help iGEM teams have a more integrated and collaborative team effort since the wet lab and HP projects would be tightly linked. 
+</p>
+<p>
+Another major area of discussion involved the development of an undergraduate-level, ‘Introduction to Synthetic Biology’ or even iGEM-specific course. The course would potentially teach students the basics of synthetic biology and related lab techniques, as well as crucial aspects of the iGEM competition and how to give an effective presentation. The overarching idea is that it would be a preparatory course for students wishing to pursue careers in synthetic biology, thus opening up a career pathway which does not exist as of yet.
+</p>
+<p>
+The course would also address two very common problems that iGEM teams face: spending valuable months training new students and lacking developed ideas at the beginning of summer. If the course were implemented, the iGEM teams would potentially have students who know all the basic lab techniques they need to hit the ground running. Also, if these students were to begin working on a project throughout the duration of the course or simply have had the opportunity to develop ideas, they would have a project that they could begin working on immediately once the iGEM season starts.
+</p>
+<p>
+Furthermore, one of the most promising ideas raised at the conference was to link iGEM teams with industry. After all, iGEM teams are trying to solve real-world problems using synthetic biology and industries have the knowledge of what problems exist and need to be solved.  It was discussed that Dennis, the coordinator of oGEM, will work on establishing contacts with industries and will subsequently match these industries with iGEM teams at a conference that would take take place in January of 2015. This conference would allow both industries and iGEM teams to communicate what it is that they can provide in this partnership. This would give the iGEM teams several months to develop their ideas and would allow HP teams to brainstorm ideas for projects related to the wet lab, since the wet lab project would be already known by the beginning of summer.
+</p>
+<p>
+In addition to serving as a liaison between industry and individual iGEM teams, Dennis will also be able to provide assistance to iGEM teams by connecting them to services they might require such as an up-to-date database of bacterial strains that can be viewed by all iGEM teams. In an effort to establish and maintain a strategic and long-term industry partnership, each team will assign an oGEM Delegate who will be the contact point for Dennis to communicate the interests of industries with. To continue the collaborative effort to further expand iGEM, an advisory board will be formed which will allow PIs interested in teaching and research to coordinate long-term collaborations with industries and create a nurturing environment for synthetic biology to thrive and flourish.
+</p>
+<br>
+		<br>
+    </div>
+
+    <div id="youtube" class="hpIndividualElement">
+     <h3 style="font-family:Arial">YouTube Videos</h3>
+<p>
+Building on our goal from last season to spread and promote synthetic biology to the general public, this season’s team worked on creating YouTube videos to engage a much larger audience. These videos consist of ideas ranging from simple science-based experiments to answering frequently asked questions. The team was also able to give a small glimpse of the ongoing projects in the lab and outside of it. Despite the fact that we are not professional actors or TV show hosts, we filmed the videos with the hope that our viewers enjoy watching these videos just as much as we enjoyed making them and laughing at our amusing bloopers in the process. 
+</p>
+<p>
+The Human Practices team believes that simple community outreach could go a long way in the future. Our goal is to share something we feel very passionately about with the public, and that is science. For this reason, the team continues to promote synthetic biology and to make it more accessible to others, even if our efforts go to inspire just one curious mind.
+</p>
+<p>
+***Include a couple of YouTube videos and link to YouTube channel on the wiki once they are made available***
+</p>
+<br>
+		<br>
+    </div>
+
+    <div id="book" class="hpIndividualElement">
+    	<h3 style="font-family:Arial">Children’s Book</h3>
+<p>
+Since the publication of Mr. Cool’s Microscopic Adventures in 2013, we have received positive reviews from both parents and children. This year, our team took this project a step further by translating the book to French to help us reach children who speak the second official language of Canada. We did our best to maintain the rhyming scheme of the book so that it could continue to be both fun and educational for young students.
+</p>
+<br>
+		<br>
+    </div>
+
+    </div>
+<div style="width:100%; height:30pt;"></div>
+</body>
+</html>
+
+
+
+
+

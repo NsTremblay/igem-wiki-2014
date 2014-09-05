@@ -1105,7 +1105,8 @@ p:last-child {
 
 /* line 58, ../scss/uo2014.scss */
 .ig-main-header {
-  overflow: hidden;
+  width: 100%;
+  z-index: 10;
   *zoom: 1;
   background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, rgba(0, 0, 0, 0.02)), color-stop(50%, rgba(77, 154, 6, 0.1)), color-stop(100%, rgba(0, 0, 0, 0.02)));
   background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.02), rgba(77, 154, 6, 0.1), rgba(0, 0, 0, 0.02));
@@ -1116,6 +1117,8 @@ p:last-child {
   height: 78px;
   margin-bottom: 20px;
   padding: 15px 20px;
+  position: fixed;
+  background-color: white;
 }
 /* line 69, ../scss/uo2014.scss */
 .ig-main-header .title {
